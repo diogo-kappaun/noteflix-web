@@ -5,7 +5,7 @@ import './global.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className="font-poppins h-screen bg-zinc-950">
+    <div className="h-screen bg-zinc-950 font-poppins">
       <SignIn />
     </div>
   </React.StrictMode>,
