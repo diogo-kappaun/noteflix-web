@@ -22,6 +22,9 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
         anton: ['Anton', 'sans-serif'],
       },
+      gridTemplateRows: {
+        app: 'max-content 1fr',
+      },
     },
   },
   plugins: [],
