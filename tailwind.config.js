@@ -4,22 +4,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        zinc: {
-          50: '#fafafa',
-          100: '#f4f4f5',
-          200: '#e4e4e7',
-          300: '#d4d4d8',
-          400: '#a1a1aa',
-          500: '#71717a',
-          600: '#52525b',
-          700: '#3f3f46',
-          800: '#27272a',
-          900: '#18181b',
-          950: '#09090b',
+        kashmir: {
+          50: '#f4f8fa',
+          100: '#e5edf4',
+          200: '#d1e1ec',
+          300: '#b2cdde',
+          400: '#8db3cd',
+          500: '#7299bf',
+          600: '#5f84b1',
+          700: '#5777a8',
+          800: '#485e85',
+          900: '#3e4f6a',
+          950: '#293242',
         },
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
+        anton: ['Anton', 'sans-serif'],
       },
     },
   },
