@@ -2,6 +2,7 @@ import { Brand } from '../../Components/Brand'
 import { Button } from '../../Components/Button'
 import { Input } from '../../Components/Input'
 import { Label } from '../../Components/Label'
+import { Line } from '../../Components/Line'
 
 export function SignUp() {
   return (
@@ -12,7 +13,7 @@ export function SignUp() {
         <h2 className="mb-12 text-start text-3xl font-semibold text-zinc-100 md:text-center md:text-5xl">
           Crie uma conta
         </h2>
-        <div className="border-b border-zinc-700"></div>
+        <Line />
         <div className="mx-auto mt-12 w-[100%] shadow-sm md:w-[20rem]">
           <form id="signup" className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
