@@ -8,6 +8,6 @@ export function Button({ className, ...props }) {
         'flex items-center rounded-lg p-3 text-lg font-semibold shadow-sm transition-colors',
         className,
       )}
-    ></button>
+    />
   )
 }
