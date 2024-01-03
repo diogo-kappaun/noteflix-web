@@ -5,7 +5,7 @@ export function Button({ className, ...props }) {
     <button
       {...props}
       className={cn(
-        'flex items-center rounded-lg border-2 p-3 text-lg font-semibold shadow-sm transition-colors duration-300',
+        'flex items-center rounded-lg p-3 text-lg font-semibold shadow-sm transition-colors',
         className,
       )}
     ></button>
