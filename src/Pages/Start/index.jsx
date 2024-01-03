@@ -1,14 +1,11 @@
 import { ChevronRight } from 'lucide-react'
 import { Button } from '../../Components/Button'
+import { Brand } from '../../Components/Brand'
 
 export function Start() {
   return (
-    <div className="grid-rows-app mx-auto grid h-screen max-w-[1440px] items-center justify-center">
-      <header className="pt-6">
-        <h1 className="text-center font-anton text-3xl text-kashmir-950 dark:text-kashmir-50">
-          ROCKETMOVIES
-        </h1>
-      </header>
+    <div className="mx-auto grid h-screen max-w-[1440px] grid-rows-app items-center justify-center">
+      <Brand />
 
       <main className="flex max-w-[1440px] flex-1 flex-col items-center justify-center space-y-6 px-6 text-center">
         <h2 className="text-3xl font-bold text-kashmir-950 md:text-4xl dark:text-kashmir-50">
