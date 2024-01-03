@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Start } from './Pages/Start'
+import { SignIn } from './Pages/SignIn'
 import './global.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className="h-screen bg-gradient-to-tr from-kashmir-200 to-kashmir-50 font-poppins dark:from-kashmir-950 dark:to-kashmir-800">
-      <Start />
+    <div className="flex h-screen flex-col items-center justify-center bg-zinc-200 font-poppins dark:bg-zinc-800">
+      <SignIn />
     </div>
   </React.StrictMode>,
 )
