@@ -16,7 +16,7 @@ export function SignIn() {
         <div className="mx-auto mt-12 w-[100%] shadow-sm md:w-[20rem]">
           <form id="signin" className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
-              <Label htmlFor="email" title="Email" />
+              <Label htmlFor="email" title="E-mail" />
               <Input type="text" id="email" placeholder="E-mail" />
             </div>
             <div className="flex flex-col gap-1">
@@ -31,9 +31,9 @@ export function SignIn() {
               Entrar
             </Button>
           </form>
-          <p className="mt-12 text-center text-zinc-100">
+          <p className="mt-12 pb-16 text-center text-zinc-400">
             Novo por aqui?{' '}
-            <a href="#" className="text-nowrap text-zinc-400 underline">
+            <a href="#" className="text-nowrap text-zinc-100 underline">
               Cadastre-se agora
             </a>
           </p>
