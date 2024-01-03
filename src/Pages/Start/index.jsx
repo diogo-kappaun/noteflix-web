@@ -15,7 +15,7 @@ export function Start() {
           Explore o mundo do cinema em minutos, resumos envolventes dos seus
           filmes favoritos, tudo em um só lugar!
         </p>
-        <Button className="mt-4 flex justify-center rounded-full bg-indigo-500 px-8 text-base text-zinc-100 transition-transform hover:scale-105">
+        <Button className="mt-4 flex justify-center rounded-full bg-zinc-100 px-6 text-base text-zinc-950 transition-opacity duration-150 hover:opacity-95">
           Vamos lá <ChevronRight />
         </Button>
       </main>

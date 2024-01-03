@@ -27,14 +27,17 @@ export function SignIn() {
             <Button
               form="signin"
               type="submit"
-              className="mt-4 flex justify-center rounded-full bg-indigo-500 text-base text-zinc-100 transition-transform hover:scale-105"
+              className="mt-4 flex justify-center rounded-full bg-zinc-100 text-base text-zinc-950 transition-opacity duration-150 hover:opacity-95"
             >
               Entrar
             </Button>
           </form>
           <p className="mt-12 pb-16 text-center text-zinc-400">
             Novo por aqui?{' '}
-            <a href="#" className="text-nowrap text-zinc-100 underline">
+            <a
+              href="#"
+              className="text-nowrap text-zinc-100 underline transition-opacity duration-150 hover:opacity-95"
+            >
               Cadastre-se agora
             </a>
           </p>

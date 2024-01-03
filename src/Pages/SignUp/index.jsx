@@ -39,14 +39,17 @@ export function SignUp() {
             <Button
               form="signup"
               type="submit"
-              className="mt-4 flex justify-center rounded-full bg-indigo-500 text-base text-zinc-100 transition-transform hover:scale-105"
+              className="mt-4 flex justify-center rounded-full bg-zinc-100 text-base text-zinc-950 transition-opacity duration-150 hover:opacity-95"
             >
               Criar
             </Button>
           </form>
           <p className="mt-12 text-center text-zinc-400">
             Já tem uma conta?{' '}
-            <a href="#" className="text-nowrap text-zinc-100 underline">
+            <a
+              href="#"
+              className="text-nowrap text-zinc-100 underline transition-opacity duration-150 hover:opacity-95"
+            >
               Entre agora
             </a>
           </p>
