@@ -11,11 +11,15 @@ export default {
         app: 'max-content 1fr',
         card: 'max-content max-content 1fr',
       },
-      gridTemplateColumns: {
-        card: 'minmax(0rem, 45rem)',
-      },
       width: {
+        cardWidth: 'min(48rem, 100%)',
         card: 'min(20rem, 100%)',
+      },
+      boxShadow: {
+        input: 'inset 0 0 0 3px rgb(244 244 245)',
+      },
+      borderRadius: {
+        'sm+': '4px',
       },
     },
   },
