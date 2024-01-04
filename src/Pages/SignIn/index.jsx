@@ -9,7 +9,7 @@ export function SignIn() {
     <div className="grid h-screen w-full grid-rows-app bg-gradient-to-t from-zinc-950 from-30% to-zinc-800">
       <Brand className="px-6 text-xl md:px-12" />
 
-      <div className="w-cardWidth mx-auto grid grid-rows-card bg-zinc-950 px-6 md:mt-12  md:rounded-lg md:px-12 md:pt-20">
+      <div className="mx-auto grid w-cardWidth grid-rows-card bg-zinc-950 px-6 md:mt-12  md:rounded-lg md:px-12 md:pt-20">
         <h2 className="mb-12 text-start text-3xl font-semibold text-zinc-100 md:text-center md:text-5xl">
           Entrar no <br /> RocketMovies
         </h2>
