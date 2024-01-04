@@ -9,7 +9,7 @@ export function SignUp() {
     <div className="grid h-screen w-full grid-rows-app bg-gradient-to-t from-zinc-950 from-30% to-zinc-800">
       <Brand className="px-6 text-xl md:px-12" />
 
-      <div className="w-cardWidth mx-auto grid grid-rows-card bg-zinc-950 px-6 pb-16 md:mt-12 md:rounded-lg  md:px-12 md:pb-0 md:pt-20">
+      <div className="mx-auto grid w-cardWidth grid-rows-card bg-zinc-950 px-6 pb-16 md:mt-12 md:rounded-lg  md:px-12 md:pb-0 md:pt-20">
         <h2 className="mb-12 text-start text-3xl font-semibold text-zinc-100 md:text-center md:text-5xl">
           Crie uma conta
         </h2>
@@ -36,11 +36,7 @@ export function SignUp() {
                 placeholder="Confirme sua senha"
               />
             </div>
-            <Button
-              form="signup"
-              type="submit"
-              className="mt-4 flex justify-center rounded-full bg-zinc-100 text-base text-zinc-950 transition-opacity duration-150 hover:opacity-95"
-            >
+            <Button form="signup" type="submit" className="mt-4">
               Criar
             </Button>
           </form>

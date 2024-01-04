@@ -24,11 +24,7 @@ export function SignIn() {
               <Label htmlFor="password" title="Senha" />
               <Input type="text" id="password" placeholder="Senha" />
             </div>
-            <Button
-              form="signin"
-              type="submit"
-              className="mt-4 flex justify-center rounded-full bg-zinc-100 text-base text-zinc-950 transition-opacity duration-150 hover:opacity-95"
-            >
+            <Button form="signin" type="submit" className="mt-4">
               Entrar
             </Button>
           </form>
