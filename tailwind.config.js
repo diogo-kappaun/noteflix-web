@@ -14,12 +14,13 @@ export default {
       width: {
         cardWidth: 'min(48rem, 100%)',
         card: 'min(20rem, 100%)',
-      },
-      boxShadow: {
-        input: 'inset 0 0 0 3px rgb(244 244 245)',
+        page: 'min(70rem, 100%)',
       },
       borderRadius: {
         'sm+': '4px',
+      },
+      screens: {
+        smartphone: '380px',
       },
     },
   },
