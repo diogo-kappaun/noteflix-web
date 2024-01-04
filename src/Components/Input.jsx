@@ -1,12 +1,12 @@
-import { twMerge } from 'tailwind-merge'
+import { cn } from '../Utils/cn'
 
-export function Input({ ...props }) {
+export function Input({ className, ...props }) {
   return (
     <input
       {...props}
-      className={twMerge(
-        'rounded-sm+ border border-zinc-500 bg-zinc-900 px-4 py-2 text-base text-zinc-500 placeholder-zinc-500 outline-none transition-all duration-300',
-        'focus-within:shadow-input focus-within:border-zinc-100',
+      className={cn(
+        'rounded-sm+ border border-zinc-700 bg-transparent px-4 py-2 text-base text-zinc-500 placeholder-zinc-500 outline-none transition-all duration-300 focus-within:border-zinc-100',
+        className,
       )}
     />
   )
