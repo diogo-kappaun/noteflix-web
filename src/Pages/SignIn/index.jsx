@@ -11,7 +11,7 @@ export function SignIn() {
 
       <div className="mx-auto grid w-cardWidth grid-rows-card bg-zinc-950 px-6 md:mt-12  md:rounded-lg md:px-12 md:pt-20">
         <h2 className="mb-12 text-start text-3xl font-semibold text-zinc-100 md:text-center md:text-5xl">
-          Entrar no <br /> RocketMovies
+          Entrar no NoteFlix
         </h2>
         <Line />
         <div className="mx-auto mt-12 w-[100%] shadow-sm md:w-[20rem]">
