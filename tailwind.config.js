@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
-        anton: ['Anton', 'sans-serif'],
+        roboto: ['Roboto Slab', 'serif'],
       },
       gridTemplateRows: {
         app: 'max-content 1fr',
@@ -20,7 +20,7 @@ export default {
         'sm+': '4px',
       },
       screens: {
-        smartphone: '380px',
+        smartphone: '340px',
       },
     },
   },
