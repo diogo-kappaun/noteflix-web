@@ -6,7 +6,7 @@ export function Header() {
       <div className="mx-auto flex w-page items-center justify-end gap-8 p-6 smartphone:justify-between">
         <a
           href="#"
-          className="hidden font-roboto text-xl font-black tracking-wide text-zinc-950 smartphone:block  dark:text-zinc-100"
+          className="hidden font-roboto text-xl font-black tracking-wide text-zinc-100 smartphone:block"
         >
           NoteFlix
         </a>

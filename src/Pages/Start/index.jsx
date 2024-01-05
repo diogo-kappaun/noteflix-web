@@ -8,10 +8,10 @@ export function Start() {
       <Brand className="px-6 text-xl md:px-12" />
 
       <main className="flex max-w-[1440px] flex-1 flex-col items-center justify-center space-y-6 px-6 text-center">
-        <h2 className="text-3xl font-bold text-zinc-950 md:text-4xl dark:text-zinc-50">
+        <h2 className="text-3xl font-bold text-zinc-100 md:text-4xl">
           Filmes, séries e muito mais, sem limites
         </h2>
-        <p className="text-md text-zinc-900 md:text-lg dark:text-zinc-200">
+        <p className="text-md text-zinc-200 md:text-lg ">
           Explore o mundo do cinema em minutos, resumos envolventes dos seus
           filmes favoritos, tudo em um só lugar!
         </p>
