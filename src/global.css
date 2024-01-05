@@ -7,4 +7,28 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-}
+
+  body {
+    --sb-track-color: #18181b;
+    --sb-thumb-color: #f4f4f5;
+    --sb-size: 6px;
+
+    scrollbar-color: var(--sb-thumb-color) 
+                    var(--sb-track-color);
+  }
+
+  body::-webkit-scrollbar {
+    width: var(--sb-size);
+    padding-left: 8px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 8px;
+    border: 1px solid #3f3f46;
+    }
+  }
