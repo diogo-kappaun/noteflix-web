@@ -26,12 +26,12 @@ export function SignUp() {
             </div>
             <div className="flex flex-col gap-1">
               <Label htmlFor="password" title="Senha" />
-              <Input type="text" id="password" placeholder="Senha" />
+              <Input type="password" id="password" placeholder="Senha" />
             </div>
             <div className="flex flex-col gap-1">
               <Label htmlFor="passwordConfirm" title="Confirme sua senha" />
               <Input
-                type="text"
+                type="password"
                 id="passwordConfirm"
                 placeholder="Confirme sua senha"
               />

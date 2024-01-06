@@ -18,11 +18,11 @@ export function SignIn() {
           <form id="signin" className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
               <Label htmlFor="email" title="E-mail" />
-              <Input type="text" id="email" placeholder="E-mail" />
+              <Input type="email" id="email" placeholder="E-mail" />
             </div>
             <div className="flex flex-col gap-1">
               <Label htmlFor="password" title="Senha" />
-              <Input type="text" id="password" placeholder="Senha" />
+              <Input type="password" id="password" placeholder="Senha" />
             </div>
             <Button form="signin" type="submit" className="mt-4">
               Entrar
