@@ -2,7 +2,7 @@ import { ButtonText } from './ButtonText'
 
 export function Header() {
   return (
-    <div className="border-b border-zinc-700 bg-zinc-950 shadow-sm">
+    <header className="border-b border-zinc-700 bg-zinc-950 shadow-sm">
       <div className="mx-auto flex w-page items-center justify-end gap-8 p-6 smartphone:justify-between">
         <a
           href="#"
@@ -22,6 +22,6 @@ export function Header() {
           />
         </div>
       </div>
-    </div>
+    </header>
   )
 }
