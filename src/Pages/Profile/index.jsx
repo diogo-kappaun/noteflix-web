@@ -2,18 +2,19 @@ import { ArrowLeft, CameraIcon } from 'lucide-react'
 import { Input } from '../../Components/Input'
 import { Label } from '../../Components/Label'
 import { Button } from '../../Components/Button'
+import { ButtonText } from '../../Components/ButtonText'
 
 export function Profile() {
   return (
     <div className="mx-auto w-page px-6 pb-12 pt-6">
       <header>
-        <a
+        <ButtonText
           className="flex w-max items-center gap-2 text-zinc-100 transition-opacity hover:underline hover:opacity-95"
           href="#"
         >
           <ArrowLeft className="h-4 w-4" />
           Voltar
-        </a>
+        </ButtonText>
       </header>
 
       <main className="mt-12 flex flex-col items-center justify-center">
@@ -21,7 +22,7 @@ export function Profile() {
           <img
             src="https://github.com/diogo-kappaun.png"
             alt="Foto de Diogo"
-            className="h-avatar w-avatar group-hover rounded-full transition-opacity group-hover:opacity-60"
+            className="group-hover h-avatar w-avatar rounded-full transition-opacity group-hover:opacity-60"
           />
 
           <Input id="avatar" type="file" className="sr-only" />
