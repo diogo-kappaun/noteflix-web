@@ -29,7 +29,7 @@ export function Profile() {
           <CameraIcon className="absolute bottom-[50%] right-[50%] hidden h-6 w-6 translate-x-[50%] translate-y-[50%] text-zinc-400 group-hover:inline" />
         </label>
 
-        <form className="w-profile mt-6 flex flex-col gap-2" action="">
+        <form className="mt-6 flex w-full flex-col gap-4 md:w-card" action="">
           <div className="flex flex-col gap-1">
             <Label htmlFor="name" title="Nome" />
             <Input type="text" id="name" placeholder="Nome" />

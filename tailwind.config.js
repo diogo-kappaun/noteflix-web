@@ -15,7 +15,6 @@ export default {
         cardWidth: 'min(48rem, 100%)',
         card: 'min(20rem, 100%)',
         page: 'min(70rem, 100%)',
-        profile: 'min(16rem, 100%)',
         avatar: '10rem',
       },
       height: {
