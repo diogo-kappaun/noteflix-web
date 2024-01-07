@@ -22,7 +22,7 @@ export function SignUp() {
             </div>
             <div className="flex flex-col gap-1">
               <Label htmlFor="email" title="E-mail" />
-              <Input type="text" id="email" placeholder="E-mail" />
+              <Input type="email" id="email" placeholder="E-mail" />
             </div>
             <div className="flex flex-col gap-1">
               <Label htmlFor="password" title="Senha" />
