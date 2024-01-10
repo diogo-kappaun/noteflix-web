@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom'
 import { Rating } from '../Rating'
 
-export function MovieItem({ title, text, tags }) {
+export function MovieItem({ title, text, tags, ...props }) {
   return (
-    <div className="flex flex-col gap-6">
+    <Link {...props} className="flex flex-col gap-6">
       <div className="rounded-sm+ border border-zinc-700 p-4 md:p-8">
         <h3 className="text-xl">{title}</h3>
         <Rating />
@@ -13,6 +14,6 @@ export function MovieItem({ title, text, tags }) {
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
