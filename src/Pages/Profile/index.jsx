@@ -9,6 +9,7 @@ export function Profile() {
     <div className="mx-auto w-page px-6 pb-12 pt-6">
       <header>
         <ButtonText
+          to="/home"
           className="flex w-max items-center gap-2 text-zinc-100 transition-opacity hover:underline hover:opacity-95"
           href="#"
         >

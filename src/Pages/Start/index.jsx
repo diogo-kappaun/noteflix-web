@@ -15,7 +15,7 @@ export function Start() {
           Explore o mundo do cinema em minutos, resumos envolventes dos seus
           filmes favoritos, tudo em um só lugar!
         </p>
-        <Button className="mt-4 px-6">
+        <Button to="/signin" className="mt-4 px-6">
           Vamos lá <ChevronRight />
         </Button>
       </main>
