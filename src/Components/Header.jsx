@@ -14,7 +14,9 @@ export function Header() {
         <div className="flex items-center gap-3">
           <div className="flex flex-col items-end">
             <span className="text-sm text-zinc-100">Diogo Kappaun</span>
-            <ButtonText className="hover:underline">sair</ButtonText>
+            <ButtonText to="/signin" className="hover:underline">
+              sair
+            </ButtonText>
           </div>
           <Link to="/profile">
             <img
