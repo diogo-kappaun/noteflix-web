@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Brand } from '../../Components/Brand'
 import { Button } from '../../Components/Button'
 import { Input } from '../../Components/Input'
@@ -24,18 +25,18 @@ export function SignIn() {
               <Label htmlFor="password" title="Senha" />
               <Input type="password" id="password" placeholder="Senha" />
             </div>
-            <Button form="signin" type="submit" className="mt-4">
+            <Button to="/home" form="signin" type="submit" className="mt-4">
               Entrar
             </Button>
           </form>
           <p className="mt-12 pb-16 text-center text-zinc-400">
             Novo por aqui?{' '}
-            <a
-              href="#"
+            <Link
+              to="/signup"
               className="text-nowrap text-zinc-100 underline transition-opacity duration-150 hover:opacity-95"
             >
               Cadastre-se agora
-            </a>
+            </Link>
           </p>
         </div>
       </div>

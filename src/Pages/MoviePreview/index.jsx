@@ -11,6 +11,7 @@ export function MoviePreview() {
 
       <main className="mx-auto flex w-page flex-col space-y-6 p-6 pb-12">
         <ButtonText
+          to="/home"
           className="flex w-max items-center gap-2 text-zinc-100 transition-opacity hover:underline hover:opacity-95"
           href="#"
         >

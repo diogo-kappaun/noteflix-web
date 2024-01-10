@@ -12,6 +12,7 @@ export function CreateMovie() {
       <Header />
       <main className="mx-auto flex w-page flex-col p-6 pb-12">
         <ButtonText
+          to="/home"
           className="flex w-max items-center gap-2 text-zinc-100 transition-opacity hover:underline hover:opacity-95"
           href="#"
         >
@@ -63,7 +64,12 @@ export function CreateMovie() {
               Excluir filme
             </Button>
 
-            <Button form="createMovie" type="submit" className="flex-1">
+            <Button
+              to="/home"
+              form="createMovie"
+              type="submit"
+              className="flex-1"
+            >
               Salvar filme
             </Button>
           </div>

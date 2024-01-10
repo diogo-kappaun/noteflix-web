@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Brand } from '../../Components/Brand'
 import { Button } from '../../Components/Button'
 import { Input } from '../../Components/Input'
@@ -36,18 +37,18 @@ export function SignUp() {
                 placeholder="Confirme sua senha"
               />
             </div>
-            <Button form="signup" type="submit" className="mt-4">
+            <Button to="/signin" form="signup" type="submit" className="mt-4">
               Criar
             </Button>
           </form>
           <p className="mt-12 text-center text-zinc-400">
             Já tem uma conta?{' '}
-            <a
-              href="#"
+            <Link
+              to="/signin"
               className="text-nowrap text-zinc-100 underline transition-opacity duration-150 hover:opacity-95"
             >
               Entre agora
-            </a>
+            </Link>
           </p>
         </div>
       </div>
