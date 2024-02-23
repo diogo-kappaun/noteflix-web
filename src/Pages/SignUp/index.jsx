@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { toast } from 'react-hot-toast'
+import { Link, useNavigate } from 'react-router-dom'
 import { Brand } from '../../Components/Brand'
 import { Button } from '../../Components/Button'
 import { Input } from '../../Components/Input'
@@ -6,6 +8,33 @@ import { Label } from '../../Components/Label'
 import { Line } from '../../Components/Line'
 
 export function SignUp() {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [passwordConfirm, setPasswordConfirm] = useState('')
+
+  const navigate = useNavigate()
+
+  const regexName = /^[a-zA-ZÀ-ÿ' -]+$/
+
+  function handleSignUp() {
+    if (!name || !email || !password || !passwordConfirm) {
+      return toast.error('Preencha todos os campos!')
+    }
+
+    if (name.length < 2 || name.length > 50) {
+      return toast.error('O nome deve ter entre 2 a 50 caracteres!')
+    }
+
+    if (!regexName.test(name)) {
+      return toast.error(
+        'O nome deve conter apenas letras, espaços, hífens e apósotolos!',
+      )
+    }
+
+    navigate(-1)
+  }
+
   return (
     <div className="grid h-screen w-full grid-rows-app bg-gradient-to-t from-zinc-950 from-30% to-zinc-800">
       <Brand className="px-6 text-xl md:px-12" />
@@ -19,15 +48,30 @@ export function SignUp() {
           <form id="signup" className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
               <Label htmlFor="name" title="Nome" />
-              <Input type="text" id="name" placeholder="Nome" />
+              <Input
+                type="text"
+                id="name"
+                placeholder="Nome"
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
             <div className="flex flex-col gap-1">
               <Label htmlFor="email" title="E-mail" />
-              <Input type="email" id="email" placeholder="E-mail" />
+              <Input
+                type="email"
+                id="email"
+                placeholder="E-mail"
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div className="flex flex-col gap-1">
               <Label htmlFor="password" title="Senha" />
-              <Input type="password" id="password" placeholder="Senha" />
+              <Input
+                type="password"
+                id="password"
+                placeholder="Senha"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
             <div className="flex flex-col gap-1">
               <Label htmlFor="passwordConfirm" title="Confirme sua senha" />
@@ -35,9 +79,15 @@ export function SignUp() {
                 type="password"
                 id="passwordConfirm"
                 placeholder="Confirme sua senha"
+                onChange={(e) => setPasswordConfirm(e.target.value)}
               />
             </div>
-            <Button to="/signin" form="signup" type="submit" className="mt-4">
+            <Button
+              form="signup"
+              type="submit"
+              className="mt-4"
+              onClick={handleSignUp}
+            >
               Criar
             </Button>
           </form>
