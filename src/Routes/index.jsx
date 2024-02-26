@@ -6,7 +6,22 @@ import { AuthRoutes } from './auth.routes'
 export function Routes() {
   return (
     <BrowserRouter>
-      <Toaster />
+      <Toaster
+        position="top-right"
+        containerStyle={{
+          top: 8,
+        }}
+        toastOptions={{
+          className: '',
+          style: {
+            background: '#f4f4f5',
+            color: '#09090b',
+          },
+          iconTheme: {
+            primary: '#09090b',
+          },
+        }}
+      />
       <AppRoutes />
       <AuthRoutes />
     </BrowserRouter>
