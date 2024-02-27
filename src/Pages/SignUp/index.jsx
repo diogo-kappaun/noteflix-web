@@ -6,6 +6,7 @@ import { Button } from '../../Components/Button'
 import { Input } from '../../Components/Input'
 import { Label } from '../../Components/Label'
 import { Line } from '../../Components/Line'
+import { api } from '../../services/api.js'
 
 export function SignUp() {
   const [name, setName] = useState('')
@@ -262,7 +263,19 @@ export function SignUp() {
       return toast.error('As senhas informadas não são iguais!')
     }
 
-    navigate(-1)
+    api
+      .post('/users', { name, email, password })
+      .then(() => {
+        toast.success('Usuário cadastrado com sucesso!')
+        navigate(-1)
+      })
+      .catch((error) => {
+        if (error.response) {
+          toast.error(error.response.data.message)
+        } else {
+          toast.error('Não foi possível realizar o cadastro!')
+        }
+      })
   }
 
   return (
