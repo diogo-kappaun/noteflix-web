@@ -1,11 +1,27 @@
+import { useState } from 'react'
+import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
 import { Brand } from '../../Components/Brand'
 import { Button } from '../../Components/Button'
 import { Input } from '../../Components/Input'
 import { Label } from '../../Components/Label'
 import { Line } from '../../Components/Line'
+import { useAuth } from '../../hooks/auth'
 
 export function SignIn() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const { signIn } = useAuth()
+
+  function handleSignIn() {
+    if (!email || !password) {
+      return toast.error('Todos os campos devem ser preenchidos!')
+    }
+
+    signIn({ email, password })
+  }
+
   return (
     <div className="grid h-screen w-full grid-rows-app bg-gradient-to-t from-zinc-950 from-30% to-zinc-800">
       <Brand className="px-6 text-xl md:px-12" />
@@ -19,13 +35,23 @@ export function SignIn() {
           <form id="signin" className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
               <Label htmlFor="email" title="E-mail" />
-              <Input type="email" id="email" placeholder="E-mail" />
+              <Input
+                type="email"
+                id="email"
+                placeholder="E-mail"
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div className="flex flex-col gap-1">
               <Label htmlFor="password" title="Senha" />
-              <Input type="password" id="password" placeholder="Senha" />
+              <Input
+                type="password"
+                id="password"
+                placeholder="Senha"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
-            <Button to="/home" form="signin" type="submit" className="mt-4">
+            <Button className="mt-4" onClick={handleSignIn}>
               Entrar
             </Button>
           </form>
