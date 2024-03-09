@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { api } from '../services/api'
 
@@ -12,8 +12,10 @@ export function AuthProvider({ children }) {
       const response = await api.post('/sessions', { email, password })
       const { user, token } = response.data
 
-      api.defaults.headers.authorization = `Bearer ${token}`
+      localStorage.setItem('@noteflix:user', JSON.stringify(user))
+      localStorage.setItem('@noteflix:token', token)
 
+      api.defaults.headers.authorization = `Bearer ${token}`
       setData({ user, token })
     } catch (e) {
       if (e.response) {
@@ -23,6 +25,20 @@ export function AuthProvider({ children }) {
       }
     }
   }
+
+  useEffect(() => {
+    const token = localStorage.getItem('@noteflix:token')
+    const user = localStorage.getItem('@noteflix:user')
+
+    if (token && user) {
+      api.defaults.headers.authorization = `Bearer ${token}`
+
+      setData({
+        token,
+        user: JSON.parse(user),
+      })
+    }
+  }, [])
 
   return (
     <AuthContext.Provider value={{ signIn, user: data.user }}>
