@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
+import { useAuth } from '../hooks/auth'
 import { ButtonText } from './ButtonText'
 
 export function Header() {
+  const { signOut } = useAuth()
+
   return (
     <header className="border-b border-zinc-700 bg-zinc-950 shadow-sm">
       <div className="mx-auto flex w-page items-center justify-end gap-8 p-6 smartphone:justify-between">
@@ -14,7 +17,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <div className="flex flex-col items-end">
             <span className="text-sm text-zinc-100">Diogo Kappaun</span>
-            <ButtonText to="/signin" className="hover:underline">
+            <ButtonText to="/" onClick={signOut} className="hover:underline">
               sair
             </ButtonText>
           </div>
