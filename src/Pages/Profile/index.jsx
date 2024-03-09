@@ -1,15 +1,15 @@
 import { ArrowLeft, CameraIcon } from 'lucide-react'
-import { Input } from '../../Components/Input'
-import { Label } from '../../Components/Label'
 import { Button } from '../../Components/Button'
 import { ButtonText } from '../../Components/ButtonText'
+import { Input } from '../../Components/Input'
+import { Label } from '../../Components/Label'
 
 export function Profile() {
   return (
     <div className="mx-auto w-page px-6 pb-12 pt-6">
       <header>
         <ButtonText
-          to="/home"
+          to="/"
           className="flex w-max items-center gap-2 text-zinc-100 transition-opacity hover:underline hover:opacity-95"
           href="#"
         >

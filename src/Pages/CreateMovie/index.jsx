@@ -1,10 +1,10 @@
 import { ArrowLeft, Plus } from 'lucide-react'
-import { ButtonText } from '../../Components/ButtonText'
-import { Header } from '../../Components/Header'
-import { Label } from '../../Components/Label'
-import { Input } from '../../Components/Input'
 import { Button } from '../../Components/Button'
+import { ButtonText } from '../../Components/ButtonText'
 import { Marker } from '../../Components/CreateMovie/Marker'
+import { Header } from '../../Components/Header'
+import { Input } from '../../Components/Input'
+import { Label } from '../../Components/Label'
 
 export function CreateMovie() {
   return (
@@ -12,7 +12,7 @@ export function CreateMovie() {
       <Header />
       <main className="mx-auto flex w-page flex-col p-6 pb-12">
         <ButtonText
-          to="/home"
+          to="/"
           className="flex w-max items-center gap-2 text-zinc-100 transition-opacity hover:underline hover:opacity-95"
           href="#"
         >
@@ -64,12 +64,7 @@ export function CreateMovie() {
               Excluir filme
             </Button>
 
-            <Button
-              to="/home"
-              form="createMovie"
-              type="submit"
-              className="flex-1"
-            >
+            <Button to="/" form="createMovie" type="submit" className="flex-1">
               Salvar filme
             </Button>
           </div>

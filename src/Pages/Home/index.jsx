@@ -1,8 +1,8 @@
-import { Header } from '../../Components/Header'
-import { Input } from '../../Components/Input'
-import { Button } from '../../Components/Button'
 import { FiPlus } from 'react-icons/fi'
+import { Button } from '../../Components/Button'
+import { Header } from '../../Components/Header'
 import { MovieItem } from '../../Components/Home/MovieItem'
+import { Input } from '../../Components/Input'
 
 export function Home() {
   return (
