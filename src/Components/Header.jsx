@@ -9,7 +9,7 @@ export function Header() {
     <header className="border-b border-zinc-700 bg-zinc-950 shadow-sm">
       <div className="mx-auto flex w-page items-center justify-end gap-8 p-6 smartphone:justify-between">
         <Link
-          to="/home"
+          to="/"
           className="hidden font-roboto text-xl font-black tracking-wide text-zinc-100 smartphone:block"
         >
           NoteFlix

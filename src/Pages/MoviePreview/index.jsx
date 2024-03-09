@@ -1,8 +1,8 @@
-import { Header } from '../../Components/Header'
-import { ButtonText } from '../../Components/ButtonText'
 import { ArrowLeft, Clock } from 'lucide-react'
-import { Rating } from '../../Components/Rating'
+import { ButtonText } from '../../Components/ButtonText'
+import { Header } from '../../Components/Header'
 import { MarkerView } from '../../Components/MoviePreview/MarkerView'
+import { Rating } from '../../Components/Rating'
 
 export function MoviePreview() {
   return (
@@ -11,7 +11,7 @@ export function MoviePreview() {
 
       <main className="mx-auto flex w-page flex-col space-y-6 p-6 pb-12">
         <ButtonText
-          to="/home"
+          to="/"
           className="flex w-max items-center gap-2 text-zinc-100 transition-opacity hover:underline hover:opacity-95"
           href="#"
         >
