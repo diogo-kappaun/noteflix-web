@@ -47,8 +47,26 @@ export function AuthProvider({ children }) {
     setData({})
   }
 
+  async function updateProfile({ user }) {
+    try {
+      await api.put('/users', user)
+      localStorage.setItem('@noteflix:user', JSON.stringify(user))
+
+      setData({ user, token: data.token })
+      toast.success('Perfil atualizado!')
+    } catch (e) {
+      if (e.response) {
+        return toast.error(e.response.data.message)
+      } else {
+        return toast.error('Não foi possível atualizar o perfil.')
+      }
+    }
+  }
+
   return (
-    <AuthContext.Provider value={{ signIn, user: data.user, signOut }}>
+    <AuthContext.Provider
+      value={{ signIn, user: data.user, signOut, updateProfile }}
+    >
       {children}
     </AuthContext.Provider>
   )
