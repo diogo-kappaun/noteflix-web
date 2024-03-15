@@ -5,6 +5,7 @@ import { Button } from '../../Components/Button'
 import { ButtonText } from '../../Components/ButtonText'
 import { Input } from '../../Components/Input'
 import { Label } from '../../Components/Label'
+import placeholder from '../../assets/placeholder.jpg'
 import { useAuth } from '../../hooks/auth'
 
 export function Profile() {
@@ -14,6 +15,12 @@ export function Profile() {
   const [email, setEmail] = useState(user.email)
   const [password, setPassword] = useState('')
   const [oldPassword, setOldPassword] = useState('')
+
+  const avatarUrl = user.avatar
+    ? `{api.defaults.baseURL}/files/{user.avatar}`
+    : placeholder
+  const [avatar, setAvatar] = useState(avatarUrl)
+  const [avatarFile, setAvatarFile] = useState(null)
 
   const regexName = /^[a-zA-ZÀ-ÿ' -]+$/
   const regexMail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/
@@ -54,7 +61,17 @@ export function Profile() {
       old_password: oldPassword,
     }
 
-    await updateProfile({ user })
+    await updateProfile({ user, avatarFile })
+  }
+
+  function handleChangeAvatar(event) {
+    const file = event.target.files[0]
+
+    setAvatarFile(file)
+
+    const imagePreview = URL.createObjectURL(file)
+
+    setAvatar(imagePreview)
   }
 
   return (
@@ -73,12 +90,17 @@ export function Profile() {
       <main className="mt-12 flex flex-col items-center justify-center">
         <label htmlFor="avatar" className="group relative">
           <img
-            src="https://github.com/diogo-kappaun.png"
-            alt="Foto de Diogo"
+            src={avatar}
+            alt={`Imagem de ${user.name}`}
             className="group-hover h-avatar w-avatar rounded-full transition-opacity group-hover:opacity-60"
           />
 
-          <Input id="avatar" type="file" className="sr-only" />
+          <Input
+            id="avatar"
+            type="file"
+            onChange={handleChangeAvatar}
+            className="sr-only"
+          />
 
           <CameraIcon className="absolute bottom-[50%] right-[50%] hidden h-6 w-6 translate-x-[50%] translate-y-[50%] text-zinc-400 group-hover:inline" />
         </label>
