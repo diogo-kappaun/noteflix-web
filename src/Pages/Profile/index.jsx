@@ -7,6 +7,7 @@ import { Input } from '../../Components/Input'
 import { Label } from '../../Components/Label'
 import placeholder from '../../assets/placeholder.jpg'
 import { useAuth } from '../../hooks/auth'
+import { api } from '../../services/api'
 
 export function Profile() {
   const { user, updateProfile } = useAuth()
@@ -17,7 +18,7 @@ export function Profile() {
   const [oldPassword, setOldPassword] = useState('')
 
   const avatarUrl = user.avatar
-    ? `{api.defaults.baseURL}/files/{user.avatar}`
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
     : placeholder
   const [avatar, setAvatar] = useState(avatarUrl)
   const [avatarFile, setAvatarFile] = useState(null)
