@@ -54,6 +54,10 @@ export function CreateMovie() {
     setNewTag('')
   }
 
+  function handleRemoveTag(tagDeleted) {
+    setTags((prevState) => prevState.filter((tag) => tag !== tagDeleted))
+  }
+
   return (
     <div>
       <Header />
@@ -107,7 +111,14 @@ export function CreateMovie() {
           <div className="flex flex-col gap-1">
             <h3 className="text-sm text-zinc-100">Marcadores</h3>
             <div className="flex w-full flex-wrap gap-2 rounded-sm+ border border-zinc-700 p-2">
-              <TagItem value="React" />
+              {tags.map((tag, index) => (
+                <TagItem
+                  key={String(index)}
+                  value={tag}
+                  onClick={() => handleRemoveTag(tag)}
+                />
+              ))}
+
               <div className="flex w-auto items-center rounded-sm+ border border-dashed border-zinc-700 px-4 py-2 text-base text-zinc-500">
                 <input
                   placeholder="Novo marcador"
