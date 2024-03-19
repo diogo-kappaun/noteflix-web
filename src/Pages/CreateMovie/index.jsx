@@ -17,8 +17,6 @@ export function CreateMovie() {
   const [tags, setTags] = useState([])
   const [newTag, setNewTag] = useState('')
 
-  const regexOnlyLetters = /^[a-zA-ZÀ-ÿ\s]*$/
-
   const navigate = useNavigate()
 
   async function handleCreateNote() {
@@ -46,10 +44,6 @@ export function CreateMovie() {
   }
 
   function handleAddTag() {
-    if (!regexOnlyLetters.test(newTag)) {
-      return toast.error('O marcador deve conter apenas letras.')
-    }
-
     setTags((prevState) => [...prevState, newTag])
     setNewTag('')
   }
