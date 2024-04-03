@@ -1,19 +1,24 @@
-import { Link } from 'react-router-dom'
 import { Rating } from '../Rating'
 
-export function MovieItem({ title, text, tags, ...props }) {
+export function MovieItem({ data, ...rest }) {
   return (
-    <Link {...props} className="flex flex-col gap-6">
+    <div {...rest} className="flex cursor-pointer flex-col gap-6">
       <div className="rounded-sm+ border border-zinc-700 p-4 md:p-8">
-        <h3 className="text-xl">{title}</h3>
-        <Rating />
-        <p className="mt-3">{text}</p>
-        <div id="tags" className="mt-3 flex flex-wrap gap-2">
-          <span className="rounded-sm+ border border-zinc-700 px-2 py-0.5">
-            {tags}
-          </span>
-        </div>
+        <h3 className="mb-3 text-xl ">{data.title}</h3>
+        <Rating count={data.rating} />
+        {data.tags && (
+          <div id="tags" className="mt-3 flex flex-wrap gap-2">
+            {data.tags.map((tag) => (
+              <span
+                key={String(tag.id)}
+                className="rounded-sm+ border border-zinc-700 px-2 py-0.5"
+              >
+                {tag.name}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
-    </Link>
+    </div>
   )
 }

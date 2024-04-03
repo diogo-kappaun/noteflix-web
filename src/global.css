@@ -3,32 +3,25 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  ::-webkit-scrollbar {
+    width: 8px;
   }
-
-  body {
-    --sb-track-color: #18181b;
-    --sb-thumb-color: #f4f4f5;
-    --sb-size: 6px;
-
-    scrollbar-color: var(--sb-thumb-color) 
-                    var(--sb-track-color);
-  }
-
-  body::-webkit-scrollbar {
-    width: var(--sb-size);
-    padding-left: 8px;
-  }
-
-  body::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
-  }
-
-  body::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
+  
+  ::-webkit-scrollbar-track {
+    background: #18181b;
+  
     border-radius: 8px;
-    border: 1px solid #3f3f46;
-    }
   }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #f4f4f5;
+    border-radius: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    transition: all 0.5s ease-in-out;
+    background-color: rgb(126, 123, 123);
+    cursor: pointer;
+    text-decoration: line-through;
+  }
+}

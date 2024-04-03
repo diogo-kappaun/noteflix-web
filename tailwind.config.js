@@ -19,6 +19,7 @@ export default {
       },
       height: {
         avatar: '10rem',
+        home: 'calc(100% - 96px)',
       },
       borderRadius: {
         'sm+': '4px',

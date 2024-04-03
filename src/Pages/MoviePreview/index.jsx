@@ -1,68 +1,87 @@
-import { ArrowLeft, Clock } from 'lucide-react'
+import dayjs from 'dayjs'
+import 'dayjs/locale/pt-br'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import { ArrowLeft } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { ButtonText } from '../../Components/ButtonText'
 import { Header } from '../../Components/Header'
 import { MarkerView } from '../../Components/MoviePreview/MarkerView'
 import { Rating } from '../../Components/Rating'
+import placeholder from '../../assets/placeholder.jpg'
+import { useAuth } from '../../hooks/auth'
+import { api } from '../../services/api'
+dayjs.extend(relativeTime)
 
 export function MoviePreview() {
+  const [data, setData] = useState(null)
+  const { user } = useAuth()
+
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : placeholder
+
+  const params = useParams()
+
+  useEffect(() => {
+    async function fetchMovie() {
+      const response = await api.get(`/movies/${params.id}`)
+      setData(response.data)
+    }
+    fetchMovie()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <div className="text-zinc-100">
       <Header />
 
-      <main className="mx-auto flex w-page flex-col space-y-6 p-6 pb-12">
-        <ButtonText
-          to="/"
-          className="flex w-max items-center gap-2 text-zinc-100 transition-opacity hover:underline hover:opacity-95"
-          href="#"
-        >
-          <ArrowLeft className="h-3 w-3" />
-          Voltar
-        </ButtonText>
+      {data && (
+        <main className="mx-auto flex w-page flex-col space-y-6 p-6 pb-12">
+          <ButtonText
+            to="/"
+            className="flex w-max items-center gap-2 text-zinc-100 transition-opacity hover:underline hover:opacity-95"
+            href="#"
+          >
+            <ArrowLeft className="h-3 w-3" />
+            Voltar
+          </ButtonText>
 
-        <div className="flex flex-wrap items-center gap-2 text-zinc-100">
-          <h2 className="text-2xl">Interestellar</h2>
-          <Rating />
-        </div>
-
-        <div className="flex flex-col gap-2 md:flex-row">
-          <div className="flex gap-2">
-            <img
-              src="https://github.com/diogo-kappaun.png"
-              alt="Foto de Diogo"
-              className="h-5 w-5 rounded-full"
-            />
-            <span className="text-sm">
-              Por <span>Diogo Kappaun</span>
-            </span>
+          <div className="flex flex-wrap items-center gap-2 text-zinc-100">
+            <h2 className="text-2xl">{data.note.title}</h2>
+            <Rating count={data.note.rating} />
           </div>
-          <div className="flex items-center gap-2">
-            <Clock className="h-5 w-5" />
-            <span className="text-sm">
-              <span>07/01/24</span> às <span>08:00</span>
-            </span>
+
+          <div className="flex flex-col gap-2 md:flex-row">
+            <div className="flex items-center gap-2">
+              <img
+                src={avatarUrl}
+                alt={`Foto de ${user.name}`}
+                className="h-5 w-5 rounded-full"
+              />
+              <span className="text-sm">
+                Por <span>{user.name}</span>
+              </span>
+              <span className="text-xs text-zinc-400">
+                {dayjs(data.note.updated_at)
+                  .locale('pt-br')
+                  .subtract(3, 'hours')
+                  .fromNow()}
+              </span>
+            </div>
           </div>
-        </div>
 
-        <div className="flex flex-wrap gap-2">
-          <MarkerView title="React" />
-          <MarkerView title="React" />
-          <MarkerView title="React" />
-        </div>
+          {data && (
+            <div className="flex flex-wrap gap-2">
+              {data.tags.map((tag) => (
+                <MarkerView key={tag.id} title={tag.name} />
+              ))}
+            </div>
+          )}
 
-        <p className="text-justify">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et quod
-          totam amet error magni, sit quibusdam. Qui, optio quaerat! Velit
-          dolorem eum dolorum est! Neque illum nesciunt alias, incidunt nostrum
-          quo eum. Sunt, ex. Tempore, ipsam perferendis voluptas quas
-          reprehenderit inventore eligendi veniam pariatur accusamus omnis sunt
-          non maiores, atque labore dolor. Sint magnam minima deleniti expedita
-          nam nobis, quas ipsam blanditiis? Nemo dignissimos consequuntur
-          laudantium quos aspernatur, in veniam nulla deserunt itaque libero,
-          reiciendis, incidunt ullam deleniti blanditiis odit provident autem
-          dolorum! Optio est error nobis velit possimus quis tenetur suscipit
-          voluptate laboriosam quibusdam eum ut, quisquam eaque vitae.
-        </p>
-      </main>
+          <p className="text-justify">{data.note.description}</p>
+        </main>
+      )}
     </div>
   )
 }
