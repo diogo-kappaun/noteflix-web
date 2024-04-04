@@ -128,7 +128,7 @@ export function SignUp() {
           <p className="mt-12 text-center text-zinc-400">
             Já tem uma conta?{' '}
             <Link
-              to="/signin"
+              to="/"
               className="text-nowrap text-zinc-100 underline transition-opacity duration-150 hover:opacity-95"
             >
               Entre agora
