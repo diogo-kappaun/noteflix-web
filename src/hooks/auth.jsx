@@ -18,7 +18,9 @@ export function AuthProvider({ children }) {
       api.defaults.headers.authorization = `Bearer ${token}`
       setData({ user, token })
     } catch (e) {
-      if (e.response) {
+      if (e.response.status === 429) {
+        return toast.error(e.response.data)
+      } else if (e.response) {
         return toast.error(e.response.data.message)
       } else {
         return toast.error('Não foi possível entrar!')
