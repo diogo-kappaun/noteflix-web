@@ -33,7 +33,7 @@ export function MoviePreview() {
   }, [])
 
   return (
-    <div className="text-zinc-100">
+    <div className="h-screen text-zinc-100">
       <Header />
 
       {data && (
@@ -80,6 +80,10 @@ export function MoviePreview() {
           )}
 
           <p className="text-justify">{data.note.description}</p>
+
+          <ButtonText className="w-fit rounded-sm+ border border-zinc-100 bg-zinc-100 px-2 py-1 text-zinc-950 transition-opacity duration-150 hover:opacity-95">
+            Excluir nota
+          </ButtonText>
         </main>
       )}
     </div>

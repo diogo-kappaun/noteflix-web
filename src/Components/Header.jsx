@@ -13,10 +13,10 @@ export function Header() {
 
   return (
     <header className="border-b border-zinc-700 bg-zinc-950 shadow-sm">
-      <div className="mx-auto flex w-page items-center justify-end gap-8 p-6 smartphone:justify-between">
+      <div className="mx-auto flex w-page items-center justify-between gap-8 p-6 ">
         <Link
           to="/"
-          className="hidden font-roboto text-xl font-black tracking-wide text-zinc-100 smartphone:block"
+          className=" font-roboto text-xl font-black tracking-wide text-zinc-100"
         >
           NoteFlix
         </Link>
