@@ -32,6 +32,9 @@ export function CreateMovie() {
       return toast.error('A nota deve ser um número inteiro entre 0 e 5.')
     }
 
+    if (description.length > 400) {
+      return toast.error('Sua descrição está muito extensa, seja mais conciso.')
+    }
     await api.post('/movies', {
       title,
       description,
@@ -44,6 +47,9 @@ export function CreateMovie() {
   }
 
   function handleAddTag() {
+    if (String(newTag) === '') {
+      return toast.error('Preencha "Novo marcador"')
+    }
     setTags((prevState) => [...prevState, newTag])
     setNewTag('')
   }
