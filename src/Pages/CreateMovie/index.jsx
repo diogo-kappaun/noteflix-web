@@ -119,28 +119,24 @@ export function CreateMovie() {
                 />
               ))}
 
-              <div className="flex w-auto items-center rounded-sm+ border border-dashed border-zinc-700 px-4 py-2 text-base text-zinc-500">
+              <div className="flex w-auto items-center rounded-sm+ border border-dashed border-zinc-700 px-2 py-2 text-base text-zinc-500 focus-within:border-zinc-100 ">
                 <input
                   placeholder="Novo marcador"
                   style={{
-                    width: Math.min(Math.max(newTag.length, 15), 50) + 'ch',
+                    width: Math.min(Math.max(newTag.length, 12), 50) + 'ch',
                   }}
                   className="flex grow bg-transparent placeholder-zinc-500 outline-none"
                   value={newTag}
                   onChange={(e) => setNewTag(e.target.value)}
                 />
                 <Plus
-                  className="ml-2 h-4 w-4 cursor-pointer transition-colors hover:text-zinc-300"
+                  className="ml-1 h-4 w-4 cursor-pointer transition-colors hover:text-zinc-300"
                   onClick={handleAddTag}
                 />
               </div>
             </div>
           </div>
-          <div className="mt-4 flex flex-col gap-4 md:flex-row">
-            <Button className="bg flex-1 border border-zinc-700 bg-transparent text-zinc-100">
-              Excluir filme
-            </Button>
-
+          <div className="mt-4">
             <Button
               onClick={handleCreateNote}
               form="createMovie"
