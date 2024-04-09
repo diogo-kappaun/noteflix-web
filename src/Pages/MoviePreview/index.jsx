@@ -1,9 +1,11 @@
+import * as AlertDialog from '@radix-ui/react-alert-dialog'
 import dayjs from 'dayjs'
 import 'dayjs/locale/pt-br'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { ArrowLeft } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { Button } from '../../Components/Button'
 import { ButtonText } from '../../Components/ButtonText'
 import { Header } from '../../Components/Header'
 import { MarkerView } from '../../Components/MoviePreview/MarkerView'
@@ -90,12 +92,40 @@ export function MoviePreview() {
 
           <p className="text-justify">{data.note.description}</p>
 
-          <ButtonText
-            className="w-fit rounded-sm+ border border-zinc-100 bg-zinc-100 px-2 py-1 text-zinc-950 transition-opacity duration-150 hover:opacity-95"
-            onClick={handleDeleteNote}
-          >
-            Excluir nota
-          </ButtonText>
+          <AlertDialog.Root>
+            <AlertDialog.Trigger className="flex" asChild>
+              <ButtonText className="w-fit rounded-sm+ border border-zinc-100 bg-zinc-100 px-2 py-1 text-zinc-950 transition-opacity duration-150 hover:opacity-95">
+                Excluir nota
+              </ButtonText>
+            </AlertDialog.Trigger>
+            <AlertDialog.Portal>
+              <AlertDialog.Overlay />
+              <AlertDialog.Content
+                className="fixed left-[50%] top-[50%] min-w-[230px] -translate-x-2/4 -translate-y-2/4 rounded-sm+
+              border
+              border-zinc-700 bg-zinc-950 p-4"
+              >
+                <AlertDialog.AlertDialogTitle className="mb-2 font-poppins font-bold text-zinc-100">
+                  Têm certeza de que deseja excluir esta nota?
+                </AlertDialog.AlertDialogTitle>
+                <AlertDialog.Description className="mb-6 font-poppins text-zinc-100">
+                  Esta ação não pode ser desfeita!
+                </AlertDialog.Description>
+                <div className="flex flex-col gap-2 md:flex-row md:justify-end md:gap-6">
+                  <AlertDialog.Cancel asChild>
+                    <Button className="border border-zinc-700 bg-transparent px-4 py-2 text-zinc-100">
+                      Cancelar
+                    </Button>
+                  </AlertDialog.Cancel>
+                  <AlertDialog.Action asChild>
+                    <Button className="px-4 py-2" onClick={handleDeleteNote}>
+                      Confirmar
+                    </Button>
+                  </AlertDialog.Action>
+                </div>
+              </AlertDialog.Content>
+            </AlertDialog.Portal>
+          </AlertDialog.Root>
         </main>
       )}
     </div>
