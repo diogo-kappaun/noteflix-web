@@ -22,7 +22,7 @@ export function Header() {
         </Link>
         <div className="flex items-center gap-3">
           <div className="flex flex-col items-end">
-            <span className="text-sm text-zinc-100">{user.name}</span>
+            <span className="text-end text-sm text-zinc-100">{user.name}</span>
             <ButtonText to="/" onClick={signOut} className="hover:underline">
               sair
             </ButtonText>
