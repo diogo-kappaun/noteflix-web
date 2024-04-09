@@ -3,7 +3,7 @@ import 'dayjs/locale/pt-br'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { ArrowLeft } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { ButtonText } from '../../Components/ButtonText'
 import { Header } from '../../Components/Header'
 import { MarkerView } from '../../Components/MoviePreview/MarkerView'
@@ -11,17 +11,26 @@ import { Rating } from '../../Components/Rating'
 import placeholder from '../../assets/placeholder.jpg'
 import { useAuth } from '../../hooks/auth'
 import { api } from '../../services/api'
+
 dayjs.extend(relativeTime)
 
 export function MoviePreview() {
   const [data, setData] = useState(null)
   const { user } = useAuth()
 
+  const navigate = useNavigate()
+
   const avatarUrl = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
     : placeholder
 
   const params = useParams()
+
+  async function handleDeleteNote() {
+    console.log(user.id)
+    await api.delete(`/movies/${params.id}`)
+    navigate(-1)
+  }
 
   useEffect(() => {
     async function fetchMovie() {
@@ -81,7 +90,10 @@ export function MoviePreview() {
 
           <p className="text-justify">{data.note.description}</p>
 
-          <ButtonText className="w-fit rounded-sm+ border border-zinc-100 bg-zinc-100 px-2 py-1 text-zinc-950 transition-opacity duration-150 hover:opacity-95">
+          <ButtonText
+            className="w-fit rounded-sm+ border border-zinc-100 bg-zinc-100 px-2 py-1 text-zinc-950 transition-opacity duration-150 hover:opacity-95"
+            onClick={handleDeleteNote}
+          >
             Excluir nota
           </ButtonText>
         </main>
