@@ -114,7 +114,7 @@ export function Profile() {
             <Input
               type="text"
               id="name"
-              placeholder="Nome"
+              placeholder={user.name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -123,7 +123,7 @@ export function Profile() {
             <Input
               type="email"
               id="email"
-              placeholder="E-mail"
+              placeholder={user.email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>

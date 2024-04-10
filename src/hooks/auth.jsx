@@ -65,7 +65,9 @@ export function AuthProvider({ children }) {
       setData({ user, token: data.token })
       toast.success('Perfil atualizado!')
     } catch (e) {
-      if (e.response) {
+      if (e.response.status === 429) {
+        return toast.error(e.response.data)
+      } else if (e.response) {
         return toast.error(e.response.data.message)
       } else {
         return toast.error('Não foi possível atualizar o perfil.')
