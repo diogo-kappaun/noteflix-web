@@ -31,7 +31,7 @@ export function Header() {
             <img
               src={avatarUrl}
               alt={`Imagem de ${user.name}`}
-              className="w-12 rounded-full"
+              className="aspect-square w-12 rounded-full"
             />
           </Link>
         </div>
