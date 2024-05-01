@@ -31,7 +31,7 @@ export function SignIn() {
           Entrar no NoteFlix
         </h2>
         <Line />
-        <div className="mx-auto mt-12 w-[100%] shadow-sm md:w-[20rem]">
+        <div className="mx-auto mt-12 w-full shadow-sm md:w-[20rem]">
           <form id="signin" className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
               <Label htmlFor="email" title="E-mail" />
@@ -51,7 +51,7 @@ export function SignIn() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <Button className="mt-4" onClick={handleSignIn}>
+            <Button className="mt-4" type="submit" onClick={handleSignIn}>
               Entrar
             </Button>
           </form>
