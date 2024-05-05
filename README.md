@@ -14,7 +14,7 @@
     <li><a href="#-features">✨ Features</a></li>
     <li><a href="#-demonstração">🚀 Demonstração</a></li>
     <li><a href="#-pré-requisitos">🔧 Pré-requisitos</a></li>
-    <li><a href="#-Instalação">⚙️ Instalação</a></li>
+    <li><a href="#%EF%B8%8F-instalação">⚙️ Instalação</a></li>
     <li><a href="#-tecnologias-utilizadas">💻 Tecnologias utilizadas</a></li>
     <li><a href="#-autor">👨🏻‍💻 Autor</a></li>
     <li><a href="#-licença">📄 Licença</a></li>
