@@ -43,7 +43,7 @@
 ## 🛠️ Instalação
 1. Clone o repositório:
 ```bash
-git clone https://github.com/diogo-kappaun/noteflix
+git clone https://github.com/diogo-kappaun/noteflix-web
 ```
 2. Vá até o repositório clonado:
 ```bash
